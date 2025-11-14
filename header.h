@@ -16,3 +16,11 @@
 #define PATH_MAX 4096
 #endif
 #define BUFSZ 65536
+void pwd_cmd(void);
+void cd_cmd(char *);
+void read_mode(mode_t m,char *buf);
+void list_one(char *name,char *dir);
+void print_error(const char *msg);
+void help(void);
+int split_args(char *,char **,int);
+void ls_cmd(char *);
