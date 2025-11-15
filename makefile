@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -g
+CFLAGS = -Wall
 OBJ = custom_shell.o src.o
 
 all: shell
