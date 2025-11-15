@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall
+CFLAGS = -Wall -g
 OBJ = custom_shell.o src.o
 
 all: shell
