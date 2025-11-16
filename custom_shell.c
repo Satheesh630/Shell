@@ -21,6 +21,20 @@ int main()
 		if(strcmp(args[0],"ls")==0){printf("Entered Ls cmd\n");ls_cmd(argc>1?args[1]:NULL);}
 		else if(strcmp(args[0],"cd")==0){cd_cmd(argc>1?args[1]:NULL);}
 		else if (strcmp(args[0],"pwd")==0)pwd_cmd();
+		else if(strcmp(args[0],"rm")==0)
+		{
+			argc>1?rm_cmd(args[1]):rm_cmd(NULL);
+		}
+		else if(strcmp(args[0],"mkdir")==0){
+			argc>1?mkdir_cmd(args[1]):mkdir_cmd(NULL);
+		}
+		else if (strcmp(args[0],"rmdir")==0)
+		{
+			argc>1?rmdir_cmd(args[1]):rmdir(NULL);
+		}
+		else if(strcmp(args[0],"cp")==0){
+			argc>1?cp_cmd(args[1],args[2]):cp_cmd(NULL,NULL);
+		}
 		else if(strcmp(args[0],"exit")==0) break;
 		else fprintf(stderr,"Unknown command:%s (try help)\n",args[0]);
 	

@@ -92,5 +92,56 @@ void help(void) {	//Implement these commands basic commands for just now
          "  help               - show this help\n"
          "  exit               - quit\n");
 }
+void rm_cmd(char *path)
+{
+	if(!path || !*path)
+	{
+		fprintf(stderr,"Usage of %s : rm <file>\n","rm");
+		return;
+	}
+	if(unlink(path)==-1){
+		print_error("Unlink");
+	}
+}
+void mkdir_cmd(char *dir)
+{
+	if(!dir || !*dir){
+		fprintf(stderr,"Usage of mkdir: mkdir <dir name\n");
+		return;
+	}
+	if(mkdir(dir,0777)==-1){
+		print_error("mkdir");
+	}
+}
+void rmdir_cmd(char *dir)
+{
+	if(!dir || !*dir){fprintf(stderr,"Usage rmdir: rmdir <file>\n"); return;}
+	if(rmdir(dir)==-1){print_error("rmdir");}
+}
+int copy_file(char *src,char * des)
+{
+	
+}
+void cp_cmd(char *src,char *des)
+{
+	if(!src || !*src){ fprintf(stderr,"Usage : cp <src> <des>"); return;}
+	struct stat st;
+	if(!stat(src,&st)){print_error("Stat src"); return;}
+	if(!S_ISREG(st.st_mode)){fprintf(stderr,"cp supports only for regular files\n") return;}
+	if(copy_file(src,des)==-1){print_error("copy file")}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 

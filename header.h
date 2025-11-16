@@ -16,6 +16,10 @@
 #define PATH_MAX 4096
 #endif
 #define BUFSZ 65536
+void cp_cmd(char *,char *);
+void rmdir_cmd(char *);
+void mkdir_cmd(char *);
+void rm_cmd(char *);
 void pwd_cmd(void);
 void cd_cmd(char *);
 void read_mode(mode_t m,char *buf);
