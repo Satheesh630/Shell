@@ -1,7 +1,6 @@
 #include"header.h"
 int main()
 {
-	printf("===========Simple Linux Shell=========\n");
 	help();
 	char pwd[PATH_MAX];
 	while(1)
